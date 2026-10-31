@@ -1,0 +1,24 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "temperature": 0,
+  "max_tokens": 384,
+  "reasoning_effort": "low",
+  "labels": [
+    "Negatif",
+    "Positif"
+  ],
+  "system_prompt": "Klasifikasikan SENTIMEN teks ulasan aplikasi BRImo yang ditulis dalam Bahasa Indonesia. Pilih hanya Negatif atau Positif berdasarkan makna bahasa ulasan, bukan berdasarkan rating, karena rating tidak diberikan saat inferensi. Negatif: keluhan, kesulitan login, error, transaksi gagal, rasa tidak puas. Positif: apresiasi, puas, membantu, mudah, cepat. Perhatikan negasi, sarkasme, dan teks informal. Jika bercampur, pilih sentimen yang dominan. Keluarkan tepat satu objek JSON: {\"label\":\"Negatif\"} atau {\"label\":\"Positif\"}. ",
+  "few_shot": [],
+  "metode": "pure_llm",
+  "dataset": "brimo_googleplaystore_review.csv (pembagian deterministik seed 42)",
+  "evaluasi": {
+    "accuracy": 0.89,
+    "f1_macro": 0.8775,
+    "invalid": 0,
+    "n": 200,
+    "tanggal": "2026-10-31",
+    "dataset": "brimo_googleplaystore_review.csv (200 test, seed 42)",
+    "konfigurasi": "A_zero_shot",
+    "f1_dnn_pembanding": 0.8904
+  }
+}
